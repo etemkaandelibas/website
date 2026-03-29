@@ -1,8 +1,1 @@
-etemkaandelibas.com	3600	IN	SOA	jaxson.ns.cloudflare.com. dns.cloudflare.com. 2052646560 10000 2400 604800 3600
-
-;; NS Records
-etemkaandelibas.com.	86400	IN	NS	jaxson.ns.cloudflare.com.
-etemkaandelibas.com.	86400	IN	NS	june.ns.cloudflare.com.
-
-;; AAAA Records
-www.etemkaandelibas.com.	1	IN	AAAA	2606:50c0:8000::153 ; cf_tags=cf-proxied:true
+etemkaandelibas.com
