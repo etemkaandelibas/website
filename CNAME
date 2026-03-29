@@ -1,12 +1,1 @@
-;; NS Records
-etemkaandelibas.com.	86400	IN	NS	jaxson.ns.cloudflare.com.
-etemkaandelibas.com.	86400	IN	NS	june.ns.cloudflare.com.
-
-;; A Records
-etemkaandelibas.com.	1	IN	A	185.199.108.153 ; cf_tags=cf-proxied:true
-
-;; AAAA Records
-etemkaandelibas.com.	1	IN	AAAA	2606:50c0:8000::153 ; cf_tags=cf-proxied:true
-
-;; CNAME Records
-www.etemkaandelibas.com.	1	IN	CNAME	etemkaandelibas.github.io. ; cf_tags=cf-proxied:true
+www.etemkaandelibas.com
