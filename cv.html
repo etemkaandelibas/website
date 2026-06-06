@@ -43,6 +43,12 @@
                 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
                 background: rgb(245, 246, 252);
             }
+
+            .cv-fallback {
+                margin-top: 1rem;
+                font-size: 0.95rem;
+                color: rgb(80, 80, 100);
+            }
         </style>
     </head>
     <body>
@@ -58,16 +64,19 @@
             <h2>Resume</h2>
 
             <div class="cv-actions">
-                <a href="https://drive.google.com/file/d/1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z/view" target="_blank" rel="noopener noreferrer">Open in new tab</a>
-                <a href="https://drive.google.com/uc?export=download&id=1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z">Download PDF</a>
+                <a href="cv.pdf" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                <a href="cv.pdf" download="etemkaandelibasCV.pdf">Download PDF</a>
             </div>
 
-            <iframe
-                class="cv-viewer"
-                src="https://drive.google.com/file/d/1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z/preview"
-                title="Etem Kaan Delibas — Resume"
-                allow="autoplay">
-            </iframe>
+            <object class="cv-viewer" data="cv.pdf" type="application/pdf">
+                <embed class="cv-viewer" src="cv.pdf" type="application/pdf">
+            </object>
+
+            <p class="cv-fallback">
+                PDF görünmüyorsa
+                <a href="cv.pdf" target="_blank" rel="noopener noreferrer">buradan açabilir</a>
+                veya indirebilirsiniz.
+            </p>
         </main>
     </body>
 </html>
