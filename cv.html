@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume — Etem Kaan Delibas</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="/images_and_videos/nsgy.png">
+        <style>
+            .cv-content {
+                max-width: 960px;
+                margin: 2rem auto;
+                padding: 0 1.5rem 2rem;
+                color: rgb(40, 40, 40);
+            }
+
+            .cv-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                margin: 1rem 0 1.25rem;
+            }
+
+            .cv-actions a {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                background-color: rgb(35, 35, 92);
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 0.95rem;
+            }
+
+            .cv-actions a:hover {
+                background-color: rgb(50, 50, 120);
+            }
+
+            .cv-viewer {
+                width: 100%;
+                height: min(82vh, 1100px);
+                border: 1px solid rgb(210, 214, 230);
+                border-radius: 10px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                background: rgb(245, 246, 252);
+            }
+        </style>
+    </head>
+    <body>
+        <header style="background-color: rgb(35, 35, 92); text-align: center;">
+            <h1 style="text-shadow: 0 0 1x white; color:rgb(150,150,150)">Welcome To My Personal Website!</h1>
+            <a href="index.html" style="color: aliceblue;" title="Goes to home page">About Etem Kaan Delibas</a>
+            <a href="education.html" style="color: aliceblue;" title="Goes to my education details page">Education</a>
+            <a href="cv.html" style="color: aliceblue;" title="Goes to my resume page">Resume</a>
+            <a href="projects.html" style="color: aliceblue;" title="Goes to my projects">Projects</a>
+        </header>
+
+        <main class="cv-content">
+            <h2>Resume</h2>
+
+            <div class="cv-actions">
+                <a href="https://drive.google.com/file/d/1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z/view" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                <a href="https://drive.google.com/uc?export=download&id=1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z">Download PDF</a>
+            </div>
+
+            <iframe
+                class="cv-viewer"
+                src="https://drive.google.com/file/d/1cN4JYreUm7fHTLcpcFkBUdduhfKMpR9z/preview"
+                title="Etem Kaan Delibas — Resume"
+                allow="autoplay">
+            </iframe>
+        </main>
+    </body>
+</html>

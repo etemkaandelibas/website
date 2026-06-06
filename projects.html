@@ -1,4 +1,198 @@
 <!DOCTYPE html>
-<head>
-    <title>Projects</title>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects — Etem Kaan Delibas</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="/images_and_videos/nsgy.png">
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+        </script>
+        <style>
+            .projects-content {
+                max-width: 1100px;
+                margin: 2rem auto;
+                padding: 0 1.5rem;
+                color: rgb(40, 40, 40);
+                line-height: 1.7;
+            }
+
+            .brain-viewer-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) 280px;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            #brain-viewer {
+                position: relative;
+                min-height: 520px;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+                background: linear-gradient(160deg, rgb(18, 18, 46), rgb(35, 35, 80));
+            }
+
+            #brain-canvas {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            #viewer-status {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+                color: rgba(230, 230, 255, 0.9);
+                background: rgba(10, 10, 30, 0.65);
+                text-align: center;
+            }
+
+            .viewer-controls {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.25rem;
+                border-radius: 12px;
+                background: rgb(245, 246, 252);
+                border: 1px solid rgb(220, 224, 240);
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            }
+
+            .viewer-controls h3 {
+                margin: 0;
+                font-size: 1rem;
+                color: rgb(35, 35, 92);
+            }
+
+            .control-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+
+            .control-group label {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.88rem;
+                font-weight: 600;
+                color: rgb(50, 50, 80);
+            }
+
+            .control-group input[type="range"] {
+                width: 100%;
+                accent-color: rgb(35, 35, 92);
+            }
+
+            .control-note {
+                margin: 0;
+                font-size: 0.8rem;
+                color: rgb(90, 90, 110);
+            }
+
+            .model-hint {
+                text-align: center;
+                font-size: 0.9rem;
+                color: rgb(100, 100, 100);
+                margin-top: 0.5rem;
+            }
+
+            @media (max-width: 860px) {
+                .brain-viewer-layout {
+                    grid-template-columns: 1fr;
+                }
+
+                #brain-viewer {
+                    min-height: 420px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header style="background-color: rgb(35, 35, 92); text-align: center;">
+            <h1 style="text-shadow: 0 0 1x white; color:rgb(150,150,150)">Welcome To My Personal Website!</h1>
+            <a href="index.html" style="color: aliceblue;" title="Goes to home page">About Etem Kaan Delibas</a>
+            <a href="education.html" style="color: aliceblue;" title="Goes to my education details page">Education</a>
+            <a href="cv.html" style="color: aliceblue;" title="Goes to my resume page">Resume</a>
+            <a href="projects.html" style="color: aliceblue;" title="Goes to my projects">Projects</a>
+        </header>
+
+        <main class="projects-content">
+            <h2>Projects</h2>
+
+            <div class="brain-viewer-layout">
+                <div id="brain-viewer">
+                    <canvas id="brain-canvas"></canvas>
+                    <div id="viewer-status">Modeller yükleniyor…</div>
+                </div>
+
+                <aside class="viewer-controls">
+                    <h3>Kesit Düzlemleri</h3>
+                    <p class="control-note">Beyni axial, sagittal ve coronal düzlemlerden kırpmak için kaydırıcıları kullanın. %0 = kesit yok, %100 = maksimum kırpma.</p>
+
+                    <div class="control-group">
+                        <label>
+                            <span>Axial (üst–alt)</span>
+                            <span id="clip-axial-value">0%</span>
+                        </label>
+                        <input type="range" id="clip-axial" min="0" max="100" value="0" step="1">
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <span>Sagittal (sağ–sol)</span>
+                            <span id="clip-sagittal-value">0%</span>
+                        </label>
+                        <input type="range" id="clip-sagittal" min="0" max="100" value="0" step="1">
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <span>Coronal (ön–arka)</span>
+                            <span id="clip-coronal-value">0%</span>
+                        </label>
+                        <input type="range" id="clip-coronal" min="0" max="100" value="0" step="1">
+                    </div>
+
+                    <h3>Traktografi</h3>
+
+                    <div class="control-group">
+                        <label>
+                            <span>Saydamlık</span>
+                            <span id="tract-opacity-value">70%</span>
+                        </label>
+                        <input type="range" id="tract-opacity" min="0" max="100" value="70" step="1">
+                    </div>
+                </aside>
+            </div>
+
+            <p class="model-hint">Sürükle: döndür · Tekerlek / pinch: yakınlaştır · Sağ tık / iki parmak: kaydır</p>
+
+            <p>
+                Over the past few years I have worked on projects that sit at the intersection of
+                <strong>[alan 1, örn. tıp / biyomedikal]</strong> and
+                <strong>[alan 2, örn. 3D modelleme / veri analizi]</strong>.
+                My focus has been on <strong>[ne yaptığın, örn. anatomik yapıların 3D görselleştirilmesi]</strong>,
+                where I used <strong>[araçlar: Blender, Python, Unity vb.]</strong> to turn
+                <strong>[girdi: örn. görüntüleme verileri, ölçümler, kavramsal tasarımlar]</strong>
+                into models and prototypes that are easier to explore and share.
+                One representative piece is the interactive model above:
+                it reflects <strong>[modelin neyi temsil ettiği]</strong> and was built to
+                <strong>[amaç: örn. eğitim, sunum, kişisel portföy]</strong>.
+                I am especially interested in <strong>[ilgi alanın]</strong> and continue to refine these projects
+                as I combine my medical training with hands-on technical work.
+            </p>
+        </main>
+
+        <script type="module" src="brain-viewer.js"></script>
+    </body>
+</html>
