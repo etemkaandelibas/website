@@ -1,26 +1,141 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>I Fix Brains </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" href="/images_and_videos/nsgy.png">
-    </head>
-    <body>
-        <header style="background-color: rgb(189, 154, 140); text-align: center;">
-        <h1  style="text-shadow: 0 0 1 rgb(255, 255, 255); color:rgb(0, 0, 0)"> Welcome To My Personal Website!</h1>
-        <a href="index.html" style="color: aliceblue;" title="Goes to home page">About Etem Kaan Delibas</a>
-        <a href="education.html" style="color: aliceblue;" title="Goes to my education details page">Education</a>
-        <a href="cv.html" style="color: aliceblue;" title="Goes to my resume page">Resume</a>
-        <a href="projects.html" style="color: aliceblue;" title="Goes to my projects">Projects</a>
-        </header>
-        <h2>Hello everyone! I am Etem Kaan Delibas as you can see from my title, I am currently a junior/fifth-year medical student at <a href="https://tip.hacettepe.edu.tr/" 
-            title="Link to my school">Hacettepe University School of Medicine.</a><br> 
-            <span style="background-color: aqua">I am still building my website but feel free to wander around. 
-            Enjoy!</span>
-        </p>
-        <img src="/images_and_videos/turbooutrun.png" alt="Turbo Outrun Cover Picture" width="297px"> <br>
-        <audio controls autoplay muted>
-            <source src="audio/turbooutrun.mp3" type="audio/mp3">
-        </audio>
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Etem Kaan Delibaş</title>
+    <meta
+      name="description"
+      content="Etem Kaan Delibaş · Hacettepe University · Research in glioblastoma, thalamic anatomy and diffusion imaging."
+    />
+    <link rel="icon" href="images_and_videos/nsgy.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="index.html"
+          >Etem Kaan Delibaş<span>Medicine &amp; neuroscience</span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="index.html" aria-current="page">About</a
+          ><a href="projects.html">Research</a
+          ><a href="education.html">Experience</a><a href="cv.html">CV</a>
+        </nav>
+      </header>
+      <main id="main">
+        <section class="intro">
+          <div class="intro-copy">
+            <p class="eyebrow">Hacettepe University · School of Medicine</p>
+            <h1>
+              Clinical questions.<br /><em>Computational perspectives.</em>
+            </h1>
+            <p class="lead">
+              I’m Etem Kaan Delibaş. My research interests span glioblastoma,
+              thalamic anatomy and diffusion imaging.
+            </p>
+            <p class="intro-detail">
+              I combine medical training with hands-on work in clinical data
+              analysis and neuroimaging, with the goal of pursuing a career as a
+              neurosurgeon-scientist.
+            </p>
+            <div class="actions">
+              <a class="button" href="projects.html">Explore my research</a
+              ><a class="text-link" href="cv.html">View CV</a>
+            </div>
+          </div>
+          <aside class="intro-aside">
+            <p class="eyebrow">Research focus</p>
+            <ol class="focus-list">
+              <li>
+                <span>01</span>Glioblastoma<small
+                  >Clinical data &amp; longitudinal analysis</small
+                >
+              </li>
+              <li>
+                <span>02</span>Thalamic anatomy<small
+                  >Segmentation &amp; anatomical comparison</small
+                >
+              </li>
+              <li>
+                <span>03</span>Brain connectivity<small
+                  >Diffusion imaging &amp; tractography</small
+                >
+              </li>
+            </ol>
+            <p class="aside-note">
+              Medical questions, explored through data and anatomy.
+            </p>
+          </aside>
+        </section>
+        <section class="section">
+          <div class="section-heading">
+            <h2>Selected research</h2>
+            <span>Ongoing work</span>
+          </div>
+          <div class="research-grid">
+            <article class="research-card">
+              <p class="eyebrow">01 / Neuro-oncology</p>
+              <h3>
+                <a href="projects.html#gbm"
+                  >Glioblastoma &amp; longitudinal blood markers</a
+                >
+              </h3>
+              <p>
+                Examining clinical outcomes and longitudinal laboratory
+                measurements in glioblastoma research with Dr. Şahin Hanalıoğlu.
+              </p>
+              <div class="tags">
+                <span>Clinical data</span><span>Survival analysis</span
+                ><span>R / Python</span>
+              </div>
+            </article>
+            <article class="research-card">
+              <p class="eyebrow">02 / Neuroimaging</p>
+              <h3>
+                <a href="projects.html#thalamus"
+                  >Mapping the anterior thalamus</a
+                >
+              </h3>
+              <p>
+                Comparing approaches to thalamic segmentation and developing a
+                workflow for anatomical and connectivity studies.
+              </p>
+              <div class="tags">
+                <span>Segmentation</span><span>Diffusion MRI</span
+                ><span>Tractography</span>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="experience-strip">
+          <p class="eyebrow">Research experience</p>
+          <h2>Hunterian Neurosurgical Laboratory</h2>
+          <p>
+            Summer research internship at Johns Hopkins in July–August 2024,
+            with Dr. Henry Brem and Betty Tyler.
+          </p>
+          <a class="text-link" href="education.html"
+            >Research &amp; clinical experience</a
+          >
+        </section>
+        <section class="contact-section">
+          <h2>Let’s talk research.</h2>
+          <p>For research inquiries and potential collaborations:</p>
+          <a class="contact-email" href="mailto:delibasetemkaan@gmail.com"
+            >delibasetemkaan@gmail.com</a
+          >
+        </section>
+      </main>
+      <footer>
+        <span>Etem Kaan Delibaş · Ankara, Türkiye</span>
+        <div>
+          <a href="mailto:delibasetemkaan@gmail.com">Email</a
+          ><a href="https://github.com/etemkaandelibas">GitHub</a
+          ><a href="cv.html">Curriculum vitae</a>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
